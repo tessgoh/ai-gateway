@@ -105,7 +105,6 @@ export default function Problems() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {problems.map((problem, index) => {
-            const Icon = problem.icon;
             return (
               <div
                 key={index}
@@ -122,9 +121,7 @@ export default function Problems() {
                     <SecurityIcon />
                   ) : problem.icon === 'update' ? (
                     <UpdateIcon />
-                  ) : (
-                    <Icon className="w-12 h-12 text-gray-400" strokeWidth={1.5} />
-                  )}
+                  ) : null}
                 </div>
 
                 {/* Title */}

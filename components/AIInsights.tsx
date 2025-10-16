@@ -4,8 +4,21 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 // 화살표 아이콘 경로
 const arrowIcon = '/images/b0c95ee357b63dada62069de1e3970b041eb5235.png';
 
+interface Insight {
+  image?: string;
+  description: string;
+  url: string;
+  tag?: string;
+  title?: string;
+  titleEmoji?: string;
+  titleHighlight?: string;
+  titleEmojiEnd?: string;
+  titleContinue?: string;
+  titleEnd?: string;
+}
+
 export default function AIInsights() {
-  const insights = [
+  const insights: Insight[] = [
     {
       image: '/images/b1.webp',
       description: "이제는 문화가 된 '클로드 코드', 조직에서 잘 사용하는 방법",
