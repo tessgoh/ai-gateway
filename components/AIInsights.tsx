@@ -100,7 +100,7 @@ export default function AIInsights() {
               {insight.image ? (
                 <>
                   {/* Image */}
-                  <div style={{ width: '100%', height: '200px' }}>
+                  <div style={{ width: '100%', height: '200px', paddingLeft: '20px', paddingRight: '20px' }}>
                     <ImageWithFallback 
                       src={insight.image}
                       alt="Insight"
@@ -109,7 +109,7 @@ export default function AIInsights() {
                   </div>
                   
                   {/* Content with padding */}
-                  <div style={{ paddingTop: '16px' }}>
+                  <div style={{ paddingTop: '16px', paddingLeft: '20px', paddingRight: '20px' }}>
                     {/* Label */}
                     <div 
                       style={{
