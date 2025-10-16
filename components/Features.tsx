@@ -1,5 +1,5 @@
 // 기능 이미지 경로
-const memberPermissionImage = '/images/08c8f032619a993ad1051a88ab01906b88971ed9.avif';
+const memberPermissionImage = '/images/멤버 권한 관리.png';
 const apiKeyManagementImage = '/images/d91d0d28aa0fb04f32a47622b38483735a312b8a.avif';
 const usageMonitoringImage = '/images/ac0519a085f3a333dc8b615a433827b0444c1ac2.avif';
 const billingImage = '/images/31427ef6a8a63acc6572271cc57e286c426e851f.avif';
