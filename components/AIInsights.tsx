@@ -100,7 +100,7 @@ export default function AIInsights() {
               {insight.image ? (
                 <>
                   {/* Image */}
-                  <div style={{ width: '100%', height: '200px', paddingLeft: '20px', paddingRight: '20px' }}>
+                  <div className="w-full px-5 md:px-8 lg:px-0 h-48 md:h-52 lg:h-56">
                     <ImageWithFallback 
                       src={insight.image}
                       alt="Insight"
@@ -109,12 +109,12 @@ export default function AIInsights() {
                   </div>
                   
                   {/* Content with padding */}
-                  <div style={{ paddingTop: '16px', paddingLeft: '20px', paddingRight: '20px' }}>
+                  <div className="px-5 md:px-8 lg:px-0" style={{ paddingTop: '16px' }}>
                     {/* Label */}
                     <div 
+                      className="text-sm md:text-base"
                       style={{
                         color: '#00c781',
-                        fontSize: '16px',
                         fontWeight: '600',
                         lineHeight: '1.5',
                         marginBottom: '8px'
@@ -125,9 +125,9 @@ export default function AIInsights() {
 
                     {/* Description */}
                     <p 
+                      className="text-lg md:text-xl lg:text-2xl"
                       style={{
                         color: '#111111',
-                        fontSize: '20px',
                         fontWeight: '600',
                         lineHeight: '1.5'
                       }}
