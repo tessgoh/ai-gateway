@@ -123,7 +123,7 @@ export default function AIInsights() {
 
                     {/* Description */}
                     <h3 
-                      className="text-lg md:text-xl lg:text-2xl"
+                      className="text-[20px] md:text-xl lg:text-2xl"
                       style={{
                         color: '#111111',
                         fontWeight: '600',
