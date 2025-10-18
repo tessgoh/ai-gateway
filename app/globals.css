@@ -226,12 +226,111 @@ body {
   display: flex;
 }
 
-.menu-line {
-  background-color: var(--white);
-  border-radius: 999px;
-  width: 20px;
-  min-width: 20px;
-  height: 2px;
-  padding-bottom: 0;
-  padding-right: 0;
+/* 드롭다운 메뉴 완전 커스텀 스타일 */
+[data-radix-dropdown-menu-content] {
+  background-color: #111111 !important;
+  border: 1px solid #555555 !important;
+  border-radius: 8px !important;
+}
+
+[data-radix-dropdown-menu-content] [role="menuitem"] {
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #9E9E9E !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-radix-dropdown-menu-content] [role="menuitem"]:hover,
+[data-radix-dropdown-menu-content] [role="menuitem"]:focus,
+[data-radix-dropdown-menu-content] [role="menuitem"][data-highlighted],
+[data-radix-dropdown-menu-content] [role="menuitem"][data-state="checked"] {
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+/* 언어 메뉴 아이템 완전 커스텀 */
+.language-menu-item {
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #9E9E9E !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: color 0.2s ease !important;
+}
+
+/* KR 드롭다운 아이템 강제 흰색 */
+[data-radix-dropdown-menu-content] [role="menuitem"]:first-child {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+/* KR 항목 강제 흰색 */
+.language-menu-item:first-child {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+/* Radix UI EN, JP 호버 시 흰색과 굵은 글씨 */
+[data-radix-dropdown-menu-content] [role="menuitem"]:nth-child(2):hover,
+[data-radix-dropdown-menu-content] [role="menuitem"]:nth-child(3):hover,
+[data-radix-dropdown-menu-content] [role="menuitem"]:nth-child(2):focus,
+[data-radix-dropdown-menu-content] [role="menuitem"]:nth-child(3):focus,
+[data-radix-dropdown-menu-content] [role="menuitem"]:nth-child(2)[data-highlighted],
+[data-radix-dropdown-menu-content] [role="menuitem"]:nth-child(3)[data-highlighted] {
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+/* EN, JP 호버 시 흰색과 굵은 글씨 */
+.language-menu-item:nth-child(2):hover,
+.language-menu-item:nth-child(3):hover,
+.language-menu-item:nth-child(2):focus,
+.language-menu-item:nth-child(3):focus,
+.language-menu-item:nth-child(2)[data-highlighted],
+.language-menu-item:nth-child(3)[data-highlighted] {
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+/* GNB 메뉴 호버 효과 - API 관리 제외 */
+nav a:not([href*="gateway"]):hover {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+/* API 관리 메뉴는 항상 흰색과 굵은 글씨 유지 */
+nav a[href*="gateway"] {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* 드롭다운 메뉴 간격 축소 - 강력한 방법 */
+[data-radix-dropdown-menu-content] {
+  gap: -2px !important;
+  row-gap: -2px !important;
+}
+
+[data-radix-dropdown-menu-content] [role="menuitem"] {
+  margin-bottom: -2px !important;
+  margin-top: -2px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+[data-radix-dropdown-menu-content] [role="menuitem"]:not(:last-child) {
+  margin-bottom: -2px !important;
 }
