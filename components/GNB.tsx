@@ -17,12 +17,25 @@ export default function GNB() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('KR');
 
-  // 현재 페이지가 한국어 페이지인지 확인
-  const isKoreanPage = typeof window !== 'undefined' && window.location.pathname.includes('/kr');
+  // 현재 페이지 경로 감지 및 언어 버전 URL 생성
+  const getCurrentPagePath = () => {
+    if (typeof window === 'undefined') return '';
+    const currentPath = window.location.pathname;
+    // 언어 접두사 제거 (예: /kr/product -> /product)
+    return currentPath.replace(/^\/(kr|en|jp)/, '') || '/';
+  };
+
+  const getLanguageUrl = (lang: string) => {
+    if (lang === 'KR') {
+      return 'https://web-wheat-rho.vercel.app/';
+    }
+    const currentPath = getCurrentPagePath();
+    return `https://letsur.ai/${lang.toLowerCase()}${currentPath}`;
+  };
 
   const menuItems = [
     { label: 'AI 서비스 관리', href: 'https://letsur.ai/kr/product', external: false },
-    { label: 'API 관리', href: 'http://letsur.ai/gateway', external: false },
+    { label: 'API 관리', href: 'https://web-wheat-rho.vercel.app/', external: true },
     { label: 'AI 교육', href: 'https://www.aible-campus.com/', external: true },
     { label: '고객사례', href: 'https://letsur.ai/usecases', external: false },
     { label: '회사소개', href: 'https://letsur.ai/aboutus', external: false },
@@ -118,7 +131,7 @@ export default function GNB() {
                   <DropdownMenuItem 
                     onClick={() => {
                       setCurrentLang('KR');
-                      window.location.href = 'https://letsur.ai/kr';
+                      window.location.href = getLanguageUrl('KR');
                     }}
                     className="language-menu-item"
                     style={{ 
@@ -135,7 +148,7 @@ export default function GNB() {
                   <DropdownMenuItem 
                     onClick={() => {
                       setCurrentLang('EN');
-                      window.location.href = 'https://letsur.ai/en';
+                      window.location.href = getLanguageUrl('EN');
                     }}
                     className="language-menu-item"
                     style={{ 
@@ -151,7 +164,7 @@ export default function GNB() {
                   <DropdownMenuItem 
                     onClick={() => {
                       setCurrentLang('JP');
-                      window.location.href = 'https://letsur.ai/jp';
+                      window.location.href = getLanguageUrl('JP');
                     }}
                     className="language-menu-item"
                     style={{ 
@@ -225,7 +238,7 @@ export default function GNB() {
                   <button
                     onClick={() => {
                       setCurrentLang('KR');
-                      window.location.href = 'https://letsur.ai/kr';
+                      window.location.href = getLanguageUrl('KR');
                     }}
                     className="w-full text-left py-2 px-4 rounded-lg hover:bg-[#F9FAFB] transition-colors"
                     style={{ 
@@ -239,7 +252,7 @@ export default function GNB() {
                   <button
                     onClick={() => {
                       setCurrentLang('EN');
-                      window.location.href = 'https://letsur.ai/en';
+                      window.location.href = getLanguageUrl('EN');
                     }}
                     className="w-full text-left py-2 px-4 rounded-lg hover:bg-[#F9FAFB] transition-colors"
                     style={{ 
